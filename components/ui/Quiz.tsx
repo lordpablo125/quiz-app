@@ -14,14 +14,6 @@ const Quiz = () => {
     saveQuizData(answers)
   }
 
-  if (isLoading) {
-    return (
-      <>
-        <Text style={styles.description}>Loading...</Text>
-      </>
-    )
-  }
-
   return (
     <>
       <ScrollView style={styles.wrapper}>
