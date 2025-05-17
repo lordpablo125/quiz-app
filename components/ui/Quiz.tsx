@@ -1,9 +1,9 @@
-import { Questions } from '@/components/ui/Questions'
 import { Timer } from '@/components/ui/Timer'
 import { useGetQuizData, useSaveQuizData } from '@/services/centerServices'
 import React, { useState } from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import { Button } from 'react-native-paper'
+import Questions from './Questions'
 
 const Quiz = () => {
   const [answers, setAnswers] = useState<{ [questionId: number]: string }>({})
@@ -23,35 +23,37 @@ const Quiz = () => {
   }
 
   return (
-    <ScrollView style={styles.wrapper}>
-      <View style={styles.timer}>
-        <Timer />
-      </View>
-      <Text style={styles.mainTitle}>Quiz</Text>
-      {!isLoading &&
-        quizData.map((item, indx) => (
-          <View key={item.title + indx} style={styles.quizContainer}>
-            <Text style={styles.title}>
-              {indx + 1} - {item.title}
-            </Text>
-            <Text style={styles.description}>{item.description}</Text>
-            <Questions
-              dataIndex={indx}
-              questions={item.questions}
-              answers={answers}
-              setAnswers={setAnswers}
-            />
-          </View>
-        ))}
-      <Button
-        mode='contained'
-        onPress={onPress}
-        style={styles.button}
-        labelStyle={styles.label}
-      >
-        Submit
-      </Button>
-    </ScrollView>
+    <>
+      <ScrollView style={styles.wrapper}>
+        <View style={styles.timer}>
+          <Timer />
+        </View>
+        <Text style={styles.mainTitle}>Quiz</Text>
+        {!isLoading &&
+          quizData.map((item, indx) => (
+            <View key={item.title + indx} style={styles.quizContainer}>
+              <Text style={styles.title}>
+                {indx + 1} - {item.title}
+              </Text>
+              <Text style={styles.description}>{item.description}</Text>
+              <Questions
+                dataIndex={indx}
+                questions={item.questions}
+                answers={answers}
+                setAnswers={setAnswers}
+              />
+            </View>
+          ))}
+        <Button
+          mode='contained'
+          onPress={onPress}
+          style={styles.button}
+          labelStyle={styles.label}
+        >
+          Submit
+        </Button>
+      </ScrollView>
+    </>
   )
 }
 

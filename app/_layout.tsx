@@ -14,7 +14,15 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={DefaultTheme}>
       <QueryProvider>
-        <Stack />
+        <Stack>
+          <Stack.Screen
+            name='index'
+            options={{
+              title: 'index',
+              headerShown: true
+            }}
+          />
+        </Stack>
         <StatusBar style='auto' />
       </QueryProvider>
     </ThemeProvider>

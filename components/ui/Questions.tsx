@@ -18,7 +18,7 @@ type QuestionsProps = {
   >
 }
 
-export function Questions({
+export default function Questions({
   dataIndex,
   questions,
   answers,

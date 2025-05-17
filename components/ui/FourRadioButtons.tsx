@@ -2,13 +2,13 @@ import { arrayRadioOptions } from '@/constants/data'
 import { View } from 'react-native'
 import { RadioButton, Text } from 'react-native-paper'
 
-const FourRadioButtons = ({
+export default function FourRadioButtons({
   value,
   onChange
 }: {
   value: string
   onChange: (newValue: string) => void
-}) => {
+}) {
   return (
     <RadioButton.Group onValueChange={onChange} value={value}>
       <View
@@ -29,5 +29,3 @@ const FourRadioButtons = ({
     </RadioButton.Group>
   )
 }
-
-export default FourRadioButtons

@@ -1,5 +1,10 @@
-import QuizScreen from './(tabs)/quiz'
+import { Text, View } from 'react-native'
 
 export default function Index() {
-  return <QuizScreen />
+  // return <Quiz />
+  return (
+    <View>
+      <Text>asdads</Text>
+    </View>
+  )
 }
