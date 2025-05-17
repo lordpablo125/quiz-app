@@ -1,4 +1,3 @@
-import { Timer } from '@/components/ui/Timer'
 import { useGetQuizData, useSaveQuizData } from '@/services/centerServices'
 import React, { useState } from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
@@ -14,12 +13,17 @@ const Quiz = () => {
     saveQuizData(answers)
   }
 
+  if (isLoading) {
+    return (
+      <>
+        <Text style={styles.description}>Loading...</Text>
+      </>
+    )
+  }
+
   return (
     <>
       <ScrollView style={styles.wrapper}>
-        <View style={styles.timer}>
-          <Timer />
-        </View>
         <Text style={styles.mainTitle}>Quiz</Text>
         {!isLoading &&
           quizData.map((item, indx) => (

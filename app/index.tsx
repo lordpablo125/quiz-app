@@ -7,9 +7,4 @@ export default function Index() {
       <Quiz />
     </View>
   )
-  // return (
-  //   <View>
-  //     <Text>asdads</Text>
-  //   </View>
-  // )
 }
