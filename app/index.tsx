@@ -1,10 +1,10 @@
-import { Text, View } from 'react-native'
+import Quiz from '@/components/ui/Quiz'
 
 export default function Index() {
-  // return <Quiz />
-  return (
-    <View>
-      <Text>asdads</Text>
-    </View>
-  )
+  return <Quiz />
+  // return (
+  //   <View>
+  //     <Text>asdads</Text>
+  //   </View>
+  // )
 }
