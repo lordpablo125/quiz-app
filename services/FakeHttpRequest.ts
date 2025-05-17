@@ -1,6 +1,6 @@
 import { data } from '@/constants/data'
 
-function withDelay<T>(data: T, delay = 0): Promise<T> {
+function withDelay<T>(data: T, delay = 2000): Promise<T> {
   return new Promise((resolve) => {
     setTimeout(() => resolve(data), delay)
   })
